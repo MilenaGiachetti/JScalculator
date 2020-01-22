@@ -1,1 +1,95 @@
-/* No CSS *//*# sourceMappingURL=calculadora.css.map */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  width: 40%;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+body .container .visualization {
+  grid-column: span 4;
+  height: 5rem;
+  margin-bottom: 1rem;
+}
+
+body .container .btn {
+  width: 80%;
+  margin: 5px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 0;
+}
+
+body .container .btn span {
+  display: inline-block;
+  padding-bottom: 50%;
+  padding-top: 50%;
+  font-weight: bold;
+}
+
+body .container .btn:hover {
+  background: rgba(132, 194, 255, 0.5);
+}
+
+body .container .btn:focus {
+  border: 0.3px solid;
+  border-color: white rgba(132, 194, 255, 0.5) rgba(132, 194, 255, 0.5) white;
+  -webkit-box-shadow: inset 5px 5px 13px rgba(132, 194, 255, 0.5), inset -3px -3px 13px white;
+          box-shadow: inset 5px 5px 13px rgba(132, 194, 255, 0.5), inset -3px -3px 13px white;
+  background: -webkit-gradient(linear, left top, right top, from(#f1f8ff), to(#e3edf7));
+  background: linear-gradient(to right, #f1f8ff 0%, #e3edf7 100%);
+  text-align: center;
+}
+
+body .container .operator {
+  background: #a9d2fc;
+}
+
+body .container .operator:hover {
+  background: #76bbff;
+}
+
+body .container .equal {
+  background: #60a0df;
+}
+
+body .container .equal:hover {
+  background: #4996e4;
+}
+
+.inside {
+  border: 0.3px solid;
+  border-color: white rgba(132, 194, 255, 0.5) rgba(132, 194, 255, 0.5) white;
+  -webkit-box-shadow: inset 5px 5px 13px rgba(132, 194, 255, 0.5), inset -3px -3px 13px white;
+          box-shadow: inset 5px 5px 13px rgba(132, 194, 255, 0.5), inset -3px -3px 13px white;
+  background: -webkit-gradient(linear, left top, right top, from(#f1f8ff), to(#e3edf7));
+  background: linear-gradient(to right, #f1f8ff 0%, #e3edf7 100%);
+  text-align: center;
+}
+
+.outside {
+  border: 0.3px solid;
+  border-color: white rgba(132, 194, 255, 0.25) rgba(132, 194, 255, 0.5) white;
+  -webkit-box-shadow: 5px 5px 13px rgba(132, 194, 255, 0.5), -3px -3px 10px rgba(255, 255, 255, 0.9);
+          box-shadow: 5px 5px 13px rgba(132, 194, 255, 0.5), -3px -3px 10px rgba(255, 255, 255, 0.9);
+  background: -webkit-gradient(linear, left top, right top, from(#f1f8ff), to(#e3edf7));
+  background: linear-gradient(to right, #f1f8ff 0%, #e3edf7 100%);
+}
+/*# sourceMappingURL=calculadora.css.map */
