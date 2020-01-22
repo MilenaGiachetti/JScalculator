@@ -14,7 +14,7 @@ function calculate(){
         result = (+num1) - (+num2);
     }else if(lastOperator === '+'){
         result = (+num1) + (+num2);
-    }else if(lastOperator === 'X'){
+    }else if(lastOperator === '*'){
         result = (+num1) * (+num2);
     }else if(lastOperator === '/'){
         result = (+num1) / (+num2);

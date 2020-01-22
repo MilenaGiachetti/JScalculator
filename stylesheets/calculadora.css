@@ -45,6 +45,16 @@ body .container .btn span {
   font-weight: bold;
 }
 
+body .container .btn i {
+  display: inline-block;
+  padding: 0;
+  font-weight: bold;
+}
+
+body .container .btn i span {
+  font-size: 0;
+}
+
 body .container .btn:hover {
   background: rgba(132, 194, 255, 0.5);
 }

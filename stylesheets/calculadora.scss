@@ -36,6 +36,14 @@ body{
                 padding-top: 50%;
                 font-weight: bold;
             }
+            i{
+                display: inline-block;
+                padding: 0;
+                font-weight: bold;
+                span{
+                    font-size: 0;
+                }
+            }
             &:hover{
                 background: rgba(132, 194, 255, 0.5);
             }
