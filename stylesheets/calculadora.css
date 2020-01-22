@@ -16,7 +16,7 @@ body .container {
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  width: 40%;
+  width: 30%;
   margin: auto;
   margin-top: 2rem;
   padding: 1rem;
@@ -91,5 +91,23 @@ body .container .equal:hover {
           box-shadow: 5px 5px 13px rgba(132, 194, 255, 0.5), -3px -3px 10px rgba(255, 255, 255, 0.9);
   background: -webkit-gradient(linear, left top, right top, from(#f1f8ff), to(#e3edf7));
   background: linear-gradient(to right, #f1f8ff 0%, #e3edf7 100%);
+}
+
+@media screen and (max-width: 1100px) {
+  body .container {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body .container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body .container {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=calculadora.css.map */
