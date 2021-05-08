@@ -1,54 +1,60 @@
 * {
+  border: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  border: 0;
   outline: 0;
+  padding: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
-html {
-  font-size: 16px;
+body {
+  background-color: #fbfbfb;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body .container {
+  border-radius: 0.5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  width: 30%;
   margin: auto;
   margin-top: 2rem;
   padding: 1rem;
-  border-radius: 0.5rem;
+  width: 30%;
 }
 
 body .container .visualization {
+  padding: 1rem;
   grid-column: span 4;
   height: 5rem;
-  line-height: 5rem;
+  line-height: 3rem;
   margin-bottom: 1rem;
+  text-align: right;
 }
 
 body .container .btn {
-  width: 80%;
-  margin: 5px;
   border-radius: 50%;
-  text-align: center;
+  cursor: pointer;
   line-height: 0;
+  margin: 5px;
+  text-align: center;
+  width: 80%;
 }
 
 body .container .btn span {
   display: inline-block;
+  font-weight: bold;
   padding-bottom: 50%;
   padding-top: 50%;
-  font-weight: bold;
 }
 
 body .container .btn i {
   display: inline-block;
-  padding: 0;
   font-weight: bold;
+  padding: 0;
 }
 
 body .container .btn i span {
@@ -60,21 +66,38 @@ body .container .btn:hover {
 }
 
 body .container .btn:focus {
+  background: -webkit-gradient(linear, left top, right top, from(#f1f8ff), to(#e3edf7));
+  background: linear-gradient(to right, #f1f8ff 0%, #e3edf7 100%);
   border: 0.3px solid;
   border-color: white rgba(132, 194, 255, 0.5) rgba(132, 194, 255, 0.5) white;
   -webkit-box-shadow: inset 5px 5px 13px rgba(132, 194, 255, 0.5), inset -3px -3px 13px white;
           box-shadow: inset 5px 5px 13px rgba(132, 194, 255, 0.5), inset -3px -3px 13px white;
-  background: -webkit-gradient(linear, left top, right top, from(#f1f8ff), to(#e3edf7));
-  background: linear-gradient(to right, #f1f8ff 0%, #e3edf7 100%);
   text-align: center;
 }
 
-body .container .operator {
+body .container .btn .fa-sun {
+  display: none;
+}
+
+body .container .btn .fa-moon {
+  display: block;
+}
+
+body .container .operator, body .container .function {
   background: #a9d2fc;
 }
 
-body .container .operator:hover {
+body .container .operator:hover, body .container .function:hover {
   background: #76bbff;
+}
+
+body .container .operator.disabled, body .container .function.disabled {
+  background: #d5dbe1;
+  cursor: default;
+}
+
+body .container .operator.disabled:hover, body .container .function.disabled:hover {
+  background: #d5dbe1;
 }
 
 body .container .equal {
@@ -85,39 +108,118 @@ body .container .equal:hover {
   background: #4996e4;
 }
 
+body.darkMode {
+  background-color: #303030;
+}
+
+body.darkMode .container {
+  background: #303030;
+}
+
+body.darkMode .container .visualization {
+  color: #ffffff;
+}
+
+body.darkMode .container .btn {
+  background: #303030;
+  color: #ffffff;
+}
+
+body.darkMode .container .btn:hover {
+  background: #121212;
+}
+
+body.darkMode .container .btn:focus {
+  background: #121212;
+  border-color: #121212;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body.darkMode .container .btn .fa-sun {
+  display: block;
+}
+
+body.darkMode .container .btn .fa-moon {
+  display: none;
+}
+
+body.darkMode .container .operator, body.darkMode .container .function {
+  background: #023047;
+}
+
+body.darkMode .container .operator:hover, body.darkMode .container .function:hover {
+  background: #066594;
+}
+
+body.darkMode .container .operator.disabled, body.darkMode .container .function.disabled {
+  background: #525252;
+}
+
+body.darkMode .container .operator.disabled:hover, body.darkMode .container .function.disabled:hover {
+  background: #525252;
+}
+
+body.darkMode .container .equal {
+  background: #fb8500;
+}
+
+body.darkMode .container .equal:hover {
+  background: #ffab4b;
+}
+
 .inside {
+  background: -webkit-gradient(linear, left top, right top, from(#f1f8ff), to(#e3edf7));
+  background: linear-gradient(to right, #f1f8ff 0%, #e3edf7 100%);
   border: 0.3px solid;
   border-color: white rgba(132, 194, 255, 0.5) rgba(132, 194, 255, 0.5) white;
   -webkit-box-shadow: inset 5px 5px 13px rgba(132, 194, 255, 0.5), inset -3px -3px 13px white;
           box-shadow: inset 5px 5px 13px rgba(132, 194, 255, 0.5), inset -3px -3px 13px white;
-  background: -webkit-gradient(linear, left top, right top, from(#f1f8ff), to(#e3edf7));
-  background: linear-gradient(to right, #f1f8ff 0%, #e3edf7 100%);
   text-align: center;
 }
 
 .outside {
+  background: -webkit-gradient(linear, left top, right top, from(#f1f8ff), to(#e3edf7));
+  background: linear-gradient(to right, #f1f8ff 0%, #e3edf7 100%);
   border: 0.3px solid;
   border-color: white rgba(132, 194, 255, 0.25) rgba(132, 194, 255, 0.5) white;
   -webkit-box-shadow: 5px 5px 13px rgba(132, 194, 255, 0.5), -3px -3px 10px rgba(255, 255, 255, 0.9);
           box-shadow: 5px 5px 13px rgba(132, 194, 255, 0.5), -3px -3px 10px rgba(255, 255, 255, 0.9);
+}
+
+.darkMode .inside {
+  background: -webkit-gradient(linear, left top, right top, from(#303030), to(#000000));
+  background: linear-gradient(to right, #303030 0%, #000000 100%);
+  border: 0.3px solid;
+  border-color: #303030;
+  -webkit-box-shadow: inset 5px 5px 13px #000000, inset -3px -3px 13px #747474;
+          box-shadow: inset 5px 5px 13px #000000, inset -3px -3px 13px #747474;
+  text-align: center;
+}
+
+.darkMode .outside {
   background: -webkit-gradient(linear, left top, right top, from(#f1f8ff), to(#e3edf7));
   background: linear-gradient(to right, #f1f8ff 0%, #e3edf7 100%);
+  border: 0.3px solid;
+  border-color: #303030;
+  -webkit-box-shadow: 5px 5px 13px #000000, -3px -3px 10px #000000;
+          box-shadow: 5px 5px 13px #000000, -3px -3px 10px #000000;
 }
 
 @media screen and (max-width: 1100px) {
-  body .container {
+  body .container, body.darkMode .container {
     width: 40%;
   }
 }
 
 @media screen and (max-width: 800px) {
-  body .container {
+  body .container, body.darkMode .container {
     width: 60%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  body .container {
+  body .container, body.darkMode .container {
     width: 90%;
   }
 }

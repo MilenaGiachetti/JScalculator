@@ -8,35 +8,36 @@
     <script src="https://kit.fontawesome.com/99b27c8ee8.js"></script>
     <link rel="stylesheet" href="stylesheets/calculadora.css">
 </head>
-<body>
+<body class="">
     <div class="container outside">
-        <div class="visualization inside"><p id='calculationsText'></p></div>
-        <button class="btn operator outside"><i class="far fa-moon"></i></button>
-        <!--sol <i class="fas fa-sun"></i>-->
-        <button class="btn operator outside" id="clear"><span>C</span></button>
-        <button class="btn operator outside" id="clearEntry"><span>CE</span></button>
-        <button class="btn operator outside" id="delete"><i class="fas fa-backspace"></i></button>
-        <button class="btn operator outside" id="percentage"><span>%</span></button>
-        <!--Cambiar signo por exponente en vez del superscript-->
-        <button class="btn operator outside"><i class="fas fa-superscript"></i></button>
-        <button class="btn operator outside" id="root"><i class="fas fa-square-root-alt"></i></button>
-        <button class="btn operator outside" id="divition"><i class="fas fa-divide"><span>/</span></i></button>
-        <button class="btn number outside"><span>7</span></button>
-        <button class="btn number outside"><span>8</span></button>
-        <button class="btn number outside"><span>9</span></button>
-        <button class="btn operator outside" id="multiplication"><i class="fas fa-times"><span>*</span></i></button>
-        <button class="btn number outside"><span>4</span></button>
-        <button class="btn number outside outside"><span>5</span></button>
-        <button class="btn number outside"><span>6</span></button>
-        <button class="btn operator outside" id="minus"><i class="fas fa-minus"><span>-</span></i></button>
-        <button class="btn number outside"><span>1</span></button>
-        <button class="btn number outside"><span>2</span></button>
-        <button class="btn number outside"><span>3</span></button>
-        <button class="btn operator outside" id="plus"><i class="fas fa-plus"><span>+</span></i></button>
-        <button class="btn operator outside"><span>+/-</span></button>
-        <button class="btn number outside"><span>0</span></button>
-        <button class="btn operator outside"><span>,</span></button>
-        <button class="btn outside equal" id="equal"><i class="fas fa-equals"><span>=</span></i></button>
+        <div class="visualization inside">
+            <p id="calculationsText"></p>
+        </div>
+
+        <button type="button" class="btn function outside" id="clear"><span>C</span></button>
+        <button type="button" class="btn function outside disabled" disabled id="clearEntry"><span>CE</span></button>
+        <button type="button" class="btn function outside disabled" disabled id="delete"><i class="fas fa-backspace"></i></button>
+        <button type="button" class="btn operator outside" id="plus"><i class="fas fa-plus"><span>+</span></i></button>
+        
+        <button type="button" class="btn number outside"><span>7</span></button>
+        <button type="button" class="btn number outside"><span>8</span></button>
+        <button type="button" class="btn number outside"><span>9</span></button>
+        <button type="button" class="btn operator outside" id="minus"><i class="fas fa-minus"><span>-</span></i></button>
+        
+        <button type="button" class="btn number outside"><span>4</span></button>
+        <button type="button" class="btn number outside"><span>5</span></button>
+        <button type="button" class="btn number outside"><span>6</span></button>
+        <button type="button" class="btn operator outside" id="multiplication"><i class="fas fa-times"><span>*</span></i></button>
+        
+        <button type="button" class="btn number outside"><span>1</span></button>
+        <button type="button" class="btn number outside"><span>2</span></button>
+        <button type="button" class="btn number outside"><span>3</span></button>
+        <button type="button" class="btn operator outside" id="divition"><i class="fas fa-divide"><span>/</span></i></button>
+
+        <button type="button" class="btn function outside" id="mode"><i class="far fa-moon"></i><i class="fas fa-sun"></i></button>
+        <button type="button" class="btn number outside"><span>0</span></button>
+        <button type="button" class="btn number function outside"><span>.</span></button>
+        <button type="button" class="btn outside equal" id="equal"><i class="fas fa-equals"><span>=</span></i></button>
     </div>
     <script src="calculadora.js"></script>
 </body>

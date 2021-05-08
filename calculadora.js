@@ -24,9 +24,10 @@ function calculate(){
     lastOperator = '';
     num2 = '';
 }
+
 for(let i = 0; i < numbers.length; i++){
     numbers[i].addEventListener('click', () => {
-        if((lastOperator === '') &&  (num1 === result)){
+        if (lastOperator === '' && num1 === result){
             calculationsText.textContent = '';
             calculation = '';
             num1 = '';
@@ -35,10 +36,11 @@ for(let i = 0; i < numbers.length; i++){
         calculationsText.textContent += numbers[i].textContent;
     })
 }
-for(let i = 0; i < operators.length; i++){
+
+for (let i = 0; i < operators.length; i++){
     operators[i].addEventListener('click', () => {
-        if (num1 === undefined || num1 ===''){
-            num1 = calculation;
+        if (num1 === undefined || num1 === ''){
+            num1 = calculation !== "" ? calculation : 0;
         }
         if (lastOperator === undefined || lastOperator ===''){
             lastOperator = operators[i].textContent;
@@ -46,17 +48,31 @@ for(let i = 0; i < operators.length; i++){
             calculate();
             lastOperator = operators[i].textContent;
         }
-        calculationsText.textContent += operators[i].textContent;
+        calculationsText.textContent += ' ' + operators[i].textContent + ' ';
         calculation = '';
     })
 }
 
-let minus = document.getElementById('minus');
-let plus = document.getElementById('plus');
-let multiplication = document.getElementById('multiplication');
-let divition = document.getElementById('divition');
 let equal = document.getElementById('equal');
+let clear = document.getElementById('clear');
+let mode = document.getElementById('mode');
+let body = document.querySelector("body");
 
 equal.addEventListener('click', () => {
     calculate();
+})
+
+clear.addEventListener('click', () => {
+    calculationsText.textContent = '';
+    num1 = '';
+    lastOperator = '';
+    num2 = '';
+})
+
+mode.addEventListener('click', () => {
+    if (body.classList.contains("darkMode")) {
+        body.classList.remove("darkMode")
+    } else {
+        body.classList.add("darkMode")
+    }
 })

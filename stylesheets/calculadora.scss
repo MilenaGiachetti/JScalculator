@@ -1,108 +1,187 @@
-*{
+* {
+    border: 0;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    border: 0;
     outline: 0;
+    padding: 0;
+    transition: all .2s;
 }
 
-html{
-    font-size: 16px;
-}
-body{
-    .container{
+body {
+    background-color: #fbfbfb;
+    font-family: Arial, Helvetica, sans-serif;
+    .container {
+        border-radius: 0.5rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        width: 30%;
         margin: auto;
         margin-top: 2rem;
         padding: 1rem;
-        border-radius: 0.5rem;
-        .visualization{
+        width: 30%;
+        .visualization {
+            padding: 1rem;
             grid-column: span 4;
             height: 5rem;
-            line-height: 5rem;
+            line-height: 3rem;
             margin-bottom: 1rem;
+            text-align: right;
         }
-        .btn{
-            width: 80%;
-            margin: 5px;
+        .btn {
             border-radius: 50%;
-            text-align: center;
+            cursor: pointer;
             line-height: 0;
-            span{
+            margin: 5px;
+            text-align: center;
+            width: 80%;
+            span {
                 display: inline-block;
+                font-weight: bold;
                 padding-bottom: 50%;
                 padding-top: 50%;
-                font-weight: bold;
             }
-            i{
+            i {
                 display: inline-block;
-                padding: 0;
                 font-weight: bold;
-                span{
+                padding: 0;
+                span {
                     font-size: 0;
                 }
             }
-            &:hover{
+            &:hover {
                 background: rgba(132, 194, 255, 0.5);
             }
-            &:focus{
+            &:focus {
+                background: linear-gradient(to right, rgb(241, 248, 255) 0%, rgb(227, 237, 247) 100%) ;
                 border: 0.3px solid;
                 border-color: rgb(255, 255, 255) rgba(132, 194, 255, 0.5) rgba(132, 194, 255, 0.5) rgb(255, 255, 255) ;
                 box-shadow: inset 5px 5px 13px rgba(132, 194, 255, 0.5), inset -3px -3px 13px rgb(255, 255, 255);
-                background: linear-gradient(to right, rgb(241, 248, 255) 0%, rgb(227, 237, 247) 100%) ;
-                text-align: center;
-            
+                text-align: center;            
             }
+            .fa-sun {
+                display: none;
+            }
+            .fa-moon {
+                display: block;
+            }
+
         }
-        .operator{
+        .operator, .function {
             background:  rgb(169, 210, 252);
-            &:hover{
+            &:hover {
                 background:  rgb(118, 187, 255);
             }
         }
-        .equal{
+        .operator.disabled, .function.disabled {
+            background:  rgb(213, 219, 225);
+            cursor: default;
+            &:hover {
+                background:  rgb(213, 219, 225);
+            }
+        }
+        .equal {
             background:  rgb(96, 160, 223);
-            &:hover{
+            &:hover {
                 background: rgb(73, 150, 228);
             }
         }
     }
 }
 
+body.darkMode {
+    background-color: #303030;
+    .container {
+        background: #303030;
+        .visualization {
+            color: #ffffff;
+        }
+        .btn {
+            background: #303030;
+            color: #ffffff;
+            &:hover {
+                background: #121212;
+            }
+            &:focus {
+                background: #121212;
+                border-color: #121212;
+                box-shadow: none;
+            }
+            .fa-sun {
+                display: block;
+            }
+            .fa-moon {
+                display: none;
+            }
+        }
+        .operator, .function {
+            background:  #023047;
+            &:hover {
+                background:  #066594;
+            }
+        }
+        .operator.disabled, .function.disabled {
+            background: #525252;
+            &:hover {
+                background: #525252;
+            }
+        }
+        .equal {
+            background:  #fb8500;
+            &:hover {
+                background: #ffab4b;
+            }
+        }
+    }
+}
 
-.inside{
+
+.inside {
+    background: linear-gradient(to right, rgb(241, 248, 255) 0%, rgb(227, 237, 247) 100%) ;
     border: 0.3px solid;
     border-color: rgb(255, 255, 255) rgba(132, 194, 255, 0.5) rgba(132, 194, 255, 0.5) rgb(255, 255, 255) ;
     box-shadow: inset 5px 5px 13px rgba(132, 194, 255, 0.5), inset -3px -3px 13px rgb(255, 255, 255);
-    background: linear-gradient(to right, rgb(241, 248, 255) 0%, rgb(227, 237, 247) 100%) ;
     text-align: center;
 }
-.outside{
+
+.outside {
+    background: linear-gradient(to right, rgb(241, 248, 255) 0%, rgb(227, 237, 247) 100%) ;
     border: 0.3px solid;
     border-color: rgb(255, 255, 255) rgba(132, 194, 255, 0.25) rgba(132, 194, 255, 0.5) rgb(255, 255, 255);
     box-shadow: 5px 5px 13px rgba(132, 194, 255, 0.5), -3px -3px 10px rgba(255, 255, 255, 0.9);
-    background: linear-gradient(to right, rgb(241, 248, 255) 0%, rgb(227, 237, 247) 100%) ;
 }
 
-@media screen and (max-width: 1100px){
-    body{
-        .container{
+
+.darkMode .inside {
+    background: linear-gradient(to right, #303030 0%, #000000 100%) ;
+    border: 0.3px solid;
+    border-color: #303030 ;
+    box-shadow: inset 5px 5px 13px #000000, inset -3px -3px 13px #747474;
+    text-align: center;
+}
+
+.darkMode .outside {
+    background: linear-gradient(to right, rgb(241, 248, 255) 0%, rgb(227, 237, 247) 100%) ;
+    border: 0.3px solid;
+    border-color: #303030;
+    box-shadow: 5px 5px 13px #000000, -3px -3px 10px #000000;
+}
+
+@media screen and (max-width: 1100px) {
+    body, body.darkMode {
+        .container {
             width: 40%;
         }
     }
 }
-@media screen and (max-width: 800px){
-    body{
-        .container{
+@media screen and (max-width: 800px) {
+    body, body.darkMode {
+        .container {
             width: 60%;
         }
     }
 }
-@media screen and (max-width: 600px){
-    body{
-        .container{
+@media screen and (max-width: 600px) {
+    body, body.darkMode {
+        .container {
             width: 90%;
         }
     }
